@@ -19,8 +19,6 @@ conda config --add channels conda-forge
 conda config --add channels defaults
 conda config --add channels r
 conda config --add channels bioconda
-# Clone this repository with folder structure into the current working folder
-git clone https://github.com/cyny666/bio2503.git new_workflow
 # Change directory into the new folder
 cd new_workflow
 
