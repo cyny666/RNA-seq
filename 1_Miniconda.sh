@@ -12,11 +12,4 @@ bash ~/miniconda.sh -b -p ~/miniconda
 
 # Add miniconda to the system path
 echo 'export PATH="$HOME/miniconda/bin:$PATH"' >> ~/.bashrc
-source ~/.bashrc
-
-# Add bioinformatic channels for downloading required packages
-conda config --add channels conda-forge
-conda config --add channels defaults
-conda config --add channels r
-conda config --add channels bioconda
 

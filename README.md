@@ -14,14 +14,43 @@ RNA-Seq是一种高通量测序技术，可用于研究生物体内的RNA表达�
 
 选用的数据集是 EBI数据库中的一个样本文件以及sortmerna的rRNA数据库
 
-方法
+方法：
+
+1.先克隆仓库到本地
+
+```shell
+git clone https://github.com/cyny666/RNA-seq
+```
+
+2.然后可以进入仓库用dockerfile构建环境（Ubuntu）
+
+```sh
+cd RNA-seq/
+# 用dockerfile（或者VMware）构建虚拟机环境
+docker build -t rna .
+```
+
+3.运行第一个脚本在虚拟机中安装miniconda
+
+```sh
+bash 1_Miniconda.sh 
+```
+
+4.运行第二个脚本下载样本文件(这里是EBI数据库中的一个样本文件)以及安装conda相应的包，也可以自己手动下载需要分析的文件
+
+```shell
+```
+
+
+
+
 
 ## 结果：
 
 * 可以成功生成FastQC的质量分析报告
 * 可以得到样本删除低质量序列后的文件以及其质量分析报告
-* 可以得到修剪的报告
-* 产生分析报告
+* 可以得到Trim_Galore删减的报告
+* 产生sortmeRNA去除的报告
 
 ## 讨论：
 
@@ -40,6 +69,10 @@ RNA-Seq是一种高通量测序技术，可用于研究生物体内的RNA表达�
 
 
 ## 附录：
+
+核心代码以及脚本、Dockerfile文件均在github上：
+
+地址如下：https://github.com/cyny666/RNA-seq
 
 
 
