@@ -1,5 +1,5 @@
 #!/bin/bash
-conda install -c bioconda sortmerna=2.1b
+
 # Download the sortmerna package (~2min) into sortmerna_db folder
 wget -P sortmerna_db https://github.com/biocore/sortmerna/archive/2.1b.zip
 
