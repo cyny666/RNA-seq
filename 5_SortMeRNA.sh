@@ -1,8 +1,6 @@
 #!/bin/bash
-
 # Download the sortmerna package (~2min) into sortmerna_db folder
 wget -P sortmerna_db https://github.com/biocore/sortmerna/archive/2.1b.zip
-
 # Decompress folder
 unzip sortmerna_db/2.1b.zip -d sortmerna_db
 

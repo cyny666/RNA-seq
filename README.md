@@ -14,7 +14,7 @@ RNA-Seq是一种高通量测序技术，可用于研究生物体内的RNA表达�
 
 选用的数据集是 EBI数据库中的一个样本文件以及sortmerna的rRNA数据库
 
-方法：
+方法：（建议在root权限下）
 
 1.先克隆仓库到本地
 
@@ -42,7 +42,7 @@ cd RNA-seq/
 bash 1_Miniconda.sh 
 ```
 
-4.运行第二个脚本下载样本文件(这里是EBI数据库中的一个样本文件)以及安装conda相应的包，也可以自己手动下载需要分析的文件（需要较长时间）
+4.运行第二个脚本下载样本文件(这里是EBI数据库中的一个样本文件，安装到input/sample.fastq.gz)以及安装conda相应的包，也可以自己手动下载需要分析的文件（需要较长时间）
 
 ```shell
 #先重新加载当前用户的 Bash 配置文件 .bashrc，
@@ -117,17 +117,11 @@ input/sample.fastq.gz
 conda install -c bioconda sortmerna=2.1b
 #先重新加载当前用户的 Bash 配置文件 .bashrc，
 source ~/.bashrc
+# 解压数据文件
+gunzip results/2_trimmed_output/sample_trimmed.fq.gz 
 # 直接运行脚本（默认输入文件为results/2_trimmed_output/sample_trimmed.fq ）
 bash 5_SortMeRNA.sh 
 ```
-
-如果脚本报错网络不行，可以手动下载数据
-
-```shell
-wget -P sortmerna_db https://github.com/biocore/sortmerna/archive/2.1b.zip
-```
-
-
 
 输出：
 
@@ -169,6 +163,10 @@ wget -P sortmerna_db https://github.com/biocore/sortmerna/archive/2.1b.zip
 * 产生sortmeRNA去除的报告
 
 ## 讨论：
+
+项目的关键：利用了FastQC、Trim_Galore、SortMeRNA对于目标基因进行处理，生成FastQC的质量分析报告、样本删除低质量序列后的文件以及其质量分析报告、Trim_Galore删减的报告、sortmeRNA去除的报告
+
+不足：对于目标基因样本的处理方式较少，产生的分析报告不够全面
 
 ## 贡献：
 
