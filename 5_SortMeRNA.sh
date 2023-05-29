@@ -10,7 +10,8 @@ mv sortmerna_db/sortmerna-2.1b/rRNA_databases/ sortmerna_db/
 # Remove unnecessary folders
 rm sortmerna_db/2.1b.zip
 rm -r sortmerna_db/sortmerna-2.1b
-
+# Run the indexing command (~8 minutes)
+indexdb_rna --ref $sortmernaREF
 # Save the location of all the databases into one folder
 sortmernaREF=sortmerna_db/rRNA_databases/silva-arc-16s-id95.fasta,sortmerna_db/index/silva-arc-16s-id95:\
 sortmerna_db/rRNA_databases/silva-arc-23s-id98.fasta,sortmerna_db/index/silva-arc-23s-id98:\
